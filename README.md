@@ -26,8 +26,8 @@
 6. Read the manual on the site to get started 
 7. Navigate as you like
 
-Live website can be viewd at http://dami-sotomi-shopify-backend-challenge.azurewebsites.net/
-or at 
+Live website can be viewed at http://dami-sotomi-shopify-backend-challenge.azurewebsites.net/
+<p> or at </p>
 https://shopify-backend-developer-intern-challenge.damilolasotomi.repl.co/
 
 For best experience, view on a laptop 😁😁
