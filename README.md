@@ -2,7 +2,7 @@
  An inventory management web app created for the Fall 2022 Shopify Backend Developer Intern Challenge
 
 
-How to run on your local device.
+**How to run on your local device.**
 
 1. Fork the repository
 2. Make a clone to your local device
