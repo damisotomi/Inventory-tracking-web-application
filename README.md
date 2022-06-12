@@ -27,5 +27,7 @@
 7. Navigate as you like
 
 Live website can be viewd at http://dami-sotomi-shopify-backend-challenge.azurewebsites.net/
+or at 
+https://shopify-backend-developer-intern-challenge.damilolasotomi.repl.co/
 
 For best experience, view on a laptop 😁😁
