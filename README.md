@@ -4,7 +4,7 @@
 
 
 **How it works**
-An Inventory management app that allows a company manage its inventory.
+**An Inventory management app that allows a company manage its inventory.**
 1. You can add, edit and delete products (can only delete products that have no transactions recorded for them.).
 2. You can asssign quantities of these products to different warehouses and also delete these quantities. 
 3. You can add, edit and delete (can only delete empty warehoues) warehouses and can also view all products in each warehouse.
