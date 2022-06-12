@@ -11,3 +11,5 @@ How to run on your local device.
 5. Run "py manage.py runserver" to view the site locally
 6. Read the manual on the site to get started 
 7. Navigate as you like
+
+Live website can be viewd at http://dami-sotomi-shopify-backend-challenge.azurewebsites.net/
