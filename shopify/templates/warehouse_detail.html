@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block title %}{{warehouse.name}}{% endblock title %}
+
+{% block content %}
+
+    <h4> Warehouse Name: {{warehouse.name}} </h4>
+    <h5> Warehouse Location: {{warehouse.location}} </h5>
+    <hr>        
+        <h5>Products Available in "{{warehouse.name}}"</h5>
+        {% if warehouse.warehouse.all %}
+        <p></P>
+            <table class="table">
+                <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Product Name</th>
+                        <th scope="col">Quantity </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for instance in warehouse.warehouse.all %}
+                    <tr>
+                        <th scope="row">{{ forloop.counter }}</th>
+                        <td> <a href="{{instance.product.get_absolute_url}}">{{ instance.product }}</a></td>
+                        <td>{{ instance.quantity }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        {% else %}
+        <p> There are no products in this warehouse</p>
+        <p> You can add products by adding new product instance/transaction and selecting this warehouse </p>
+
+        {% endif %}
+        <p></p>
+        <a href="{% url 'warehouse_update_form' warehouse.id %}"><button>Edit Warehouse</button> </a> &nbsp <a href="{% url 'warehouse_delete_form' warehouse.id %}"><button>Delete Warehouse</button> </a>  
+        <p></p>   
+        
+        <p></p>
+        <a href="{% url 'warehouses'%}"><button>Go back to Warehouse list</button> </a>
+{% endblock content %}
+
+

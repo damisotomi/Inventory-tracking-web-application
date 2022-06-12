@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% load crispy_forms_tags %} 
+
+{% block title %}Delete Warehouse {% endblock title %}
+
+
+{% block content %}
+
+{% if warehouse.warehouse.all %}
+
+    <h5> Sorry "{{warehouse}}" cannot be deleted!!. There are currently products in this warehouse.  </h5>
+    <p></p>
+    To delete "{{warehouse}}", move the products in it to other warehouses by editing transactions or delete the transactions
+    <p></p>
+    <a href="{{warehouse.get_absolute_url}}"><button>Go back</button> </a>
+    <p></p>
+
+    {% else %}
+    <p></P>
+    <form enctype='multipart/form-data' method="post">
+
+    <!-- Security token -->
+
+    {% csrf_token %}
+
+    {% comment %} Using the formset {% endcomment %}
+    Are you sure you want to delete "{{warehouse}}" 
+    {% comment %} {{form.as_p}} {% endcomment %}
+
+    {{form|crispy}}
+    <p></p>
+    <input type="submit" value="Confirm">
+
+    </form>
+
+    <p></p>
+
+    <a href="{{warehouse.get_absolute_url}}"><button>Cancel</button> </a>
+{% endif %}
+{% endblock %}
+
+
+
+

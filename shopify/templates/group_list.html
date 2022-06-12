@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Groups
+{% endblock title %}
+
+
+
+{% block content %}
+    {% if groups %}
+    
+    <h4> List of all product Groups. </h4>
+    <p></P>
+    <a href="{% url 'group_form'%}"><button>Add New Group</button></a>
+
+        <table class="table">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Group Name</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for group in groups %}
+                <tr>
+                    <th scope="row">{{ forloop.counter }}</th>
+                    <td> <a href="{{group.get_absolute_url}}"> {{ group }} </a> </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+                  {% comment %} since the related name btw products and product instance is product. the second product is the related name {% endcomment %}
+    {% else %}
+        <p> No Group available </p>
+
+    {% endif %}
+
+{% endblock content %}
+
+
+
+
+
+

@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Products
+{% endblock title %}
+
+
+
+{% block content %}
+    {% if products %}
+    
+    <h4> List of all products available in all Warehouses combined. </h4>
+    <p></P>
+    <a href="{% url 'product_form'%}"><button>Add New Product</button></a>
+    <p></P>
+    <a  href="{% url 'product_instance_form'%}" target="-blank"><button>Add New Product Instance/Transaction </button> </a>
+    <p></P>
+        <table class="table">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Product Name</th>
+                    <th scope="col">Product Group</th>
+                    <th scope="col">Total Quantity On Hand</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                {% for product in products %}
+                <tr>
+                    <th scope="row">{{ forloop.counter }}</th>
+                    <td><a href="{{product.get_absolute_url}}">{{ product }}</a> </td>
+                    <td>{{ product.group.name }}</td>
+                    {% comment %} {% for instance in product.product.all %}  {% endcomment %}
+                    {% comment %} <td>{{instance.quantity}}</td> {% endcomment %}
+                    <td>{{product.totalquantity}}</td>
+                    {% comment %} {% endfor %} {% endcomment %}
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+                  {% comment %} since the related name btw products and product instance is product. the second product is the related name {% endcomment %}
+    {% else %}
+        <p> No product available </p>
+
+    {% endif %}
+
+{% endblock content %}
+
+
+
+
+
+

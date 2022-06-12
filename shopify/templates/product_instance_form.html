@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% load crispy_forms_tags %} 
+
+{% block title %}Add New Transaction{% endblock title %}
+
+
+{% block content %}
+<h4>Add New product Instance/Transaction</h4>
+<p></p>
+<p></P>
+<form enctype='multipart/form-data' method="post">
+
+<!-- Security token -->
+
+{% csrf_token %}
+
+{% comment %} Using the formset {% endcomment %}
+
+{% comment %} {{form.as_p}} {% endcomment %}
+
+{{form|crispy}}
+<p></p>
+<input type="submit" value="Add Product instance">
+
+</form>
+
+<p></p>
+
+<a href="{% url 'product_instances'%}"><button>Cancel</button> </a>
+
+{% endblock %}
+
+
+
+

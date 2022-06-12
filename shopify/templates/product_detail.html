@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+
+{% block title %}{{product.name}}{% endblock title %}
+
+{% block content %}
+    <h3> Product Name: {{product.name}} </h3>
+    <h5> Product group: {{product.group}}</h5>
+    <h5> Product description: {{product.description}}</h5>
+    <h5> Total Quantity on Hand: {{product.totalquantity}}</h5>
+    <hr>        
+    {% if product.product.all %}
+    <h4>This product is available in the following warehouse(s) </h4>
+    <p></P>
+        <table class="table">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Warehouse Name</th>
+                    <th scope="col">Location</th>
+                    <th scope="col">Quantity </th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for instance in product.product.all %}
+                <tr>
+                    <th scope="row">{{ forloop.counter }}</th>
+                    <td> <a href="{{instance.warehouse.get_absolute_url}}">{{ instance.warehouse }}</a> </td>
+                    <td>{{ instance.warehouse.location }}</td>
+                    <td>{{ instance.quantity }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+    <p> We now have a record of this product but no quantities have been assigned to any warehouse yet. </p>
+    <p> To add quantities, add new product instance/transaction and select this product as well as the warehouse it should be stored in. </p>
+    {% endif %}
+    <p></p>
+    <hr>
+    <p></p>
+    <a href="{% url 'product_update_form' product.code %}"><button>Edit Product</button> </a> &nbsp <a href="{% url 'product_delete_form' product.code %}"><button>Delete Product</button> </a> 
+    <p></p>   
+     
+    <p></p>
+    <a href="{% url 'products'%}"><button>Go back to Product list</button> </a>        
+
+{% endblock content %}
+
+

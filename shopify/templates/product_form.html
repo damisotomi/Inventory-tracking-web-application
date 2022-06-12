@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% load crispy_forms_tags %} {% comment %} add crispy forms to installed apps in settings first then load here {% endcomment %}
+
+{% block title %}Add New Product{% endblock title %}
+
+
+{% block content %}
+<h5> Add New Product</h5>
+<p></p>
+<h6> If product details already in system and you would like to record details of quantity available and warehouse(s) </br>it is located in, add product instance/transaction <a href="{% url 'product_instance_form' %}"><button> Click here.</button></a> </h6> </P>
+<p></p>
+<form  method="post">
+
+<!-- Security token -->
+
+{% csrf_token %}
+
+{% comment %} Using the formset {% endcomment %}
+
+{% comment %} {{form.as_p}} This uses djangos inbuilt form {% endcomment %} 
+{{form|crispy}}
+Group not in list?  <a href="{% url 'group_form'%}" target="-blank"> Add group </a> and refresh page
+<p></p>
+<input type="submit" value="Add Product">
+
+</form>
+
+<p></p>
+
+<a href="{% url 'products'%}"><button>Cancel</button> </a>
+
+{% endblock %}
+
+
+
+

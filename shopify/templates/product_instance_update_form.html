@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% load crispy_forms_tags %} 
+
+{% block title %}Edit Product instance{% endblock title %}
+
+
+{% block content %}
+<p></p>
+<p></P>
+<form enctype='multipart/form-data' method="post">
+
+<!-- Security token -->
+
+{% csrf_token %}
+
+{% comment %} Using the formset {% endcomment %}
+
+{% comment %} {{form.as_p}} {% endcomment %}
+
+{{form|crispy}}
+<p></p>
+<input type="submit" value="Update product instance">
+
+</form>
+
+<p></p>
+
+<a href="{{productinstance.get_absolute_url}}"><button>Cancel</button> </a>
+
+{% endblock %}
+
+
+
+

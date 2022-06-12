@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Warehouses
+{% endblock title %}
+
+
+{% block content %}
+
+
+    {% if warehouses %}
+
+    <h4> List of all Warehouses in our Database</h4>
+    <p></P>
+    <a href="{% url 'warehouse_form'%}"><button>Add new Warehouse</button> </a>
+    <p></P>
+    <table class="table">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Warehouse Name</th>
+                <th scope="col">Warehouse Location</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for warehouse in warehouses %}
+            <tr>
+                <th scope="row">{{ forloop.counter }}</th>
+                <td> <a href="{{warehouse.get_absolute_url}}">{{ warehouse }}</a>  </td>
+                <td>{{ warehouse.location }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+  
+
+    {% else %}
+    <p> We have no warehouse on record</p>
+
+    {% endif %}
+
+
+
+{% endblock content %}
+
+
+
+
+
+

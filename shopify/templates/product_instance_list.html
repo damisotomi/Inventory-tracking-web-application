@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Transactions
+{% endblock title %}
+
+
+
+{% block content %}
+    {% if productinstances %}
+    
+    <h4> List of transactions that have taken place in all Warehouses. </h4>
+    <a href="{% url 'product_instance_form'%}"><button>Add new transaction</button></a>
+    <p></P>
+    <p></P>
+        <table class="table">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Product Name</th>
+                    <th scope="col">Quantity Added</th>
+                    <th scope="col">Warehouse</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for productinstance in productinstances %}
+                <tr>
+                    <th scope="row">{{ forloop.counter }}</th>
+                    <td><a href="{{productinstance.get_absolute_url}}">{{ productinstance }}</a> </td>
+                    <td>{{ productinstance.quantity}}</td>
+                    <td>{{productinstance.warehouse}}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+                  {% comment %} since the related name btw products and product instance is product. the second product is the related name {% endcomment %}
+    {% else %}
+        <p> No Transactions have taken place yet </p>
+
+    {% endif %}
+
+{% endblock content %}
+
+
+
+
+
+

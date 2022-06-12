@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% load crispy_forms_tags %}
+
+{% block title %}Edit Warehouse{% endblock title %}
+
+
+{% block content %}
+
+<form enctype='multipart/form-data' method="post">
+
+<!-- Security token -->
+
+{% csrf_token %}
+
+{% comment %} Using the formset {% endcomment %}
+
+{% comment %} {{form.as_p}} {% endcomment %}
+{{form|crispy}}
+
+<input type="submit" value="Update Warehouse" >
+
+</form>
+
+<p></p>
+
+<a href="{{warehouse.get_absolute_url}}"> <button>Cancel</button> </a>
+
+{% endblock %}
+
+
+
+

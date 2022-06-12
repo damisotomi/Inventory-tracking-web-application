@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block title %}{{group.name}}{% endblock title %}
+
+{% block content %}
+    <h3> Group Name: {{group.name}} </h3>
+    <hr>        
+    {% if group.group.all %}
+    <h4>The following Product(s) belong to this group </h4>
+    <p></P>
+        <table class="table">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col"> Product Name</th>
+                    <th scope="col"> Total Quantity on Hand</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for product in group.group.all %}
+                <tr>
+                    <th scope="row">{{ forloop.counter }}</th>
+                    <td> {{ product }} </td>
+                    <td>{{ product.totalquantity }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+    <p> No product belongs to this group. </p>
+    {% endif %}
+    <p></p>
+    <p></p>
+    <a href="{% url 'group_update_form' group.id %}"><button>Edit Group</button> </a> &nbsp <a href="{% url 'group_delete_form' group.id %}"><button>Delete Group </button> </a> 
+    <p></p>   
+     
+    <p></p>
+    <a href="{% url 'groups'%}"><button>Go back to Group list</button> </a>        
+
+{% endblock content %}
+
+

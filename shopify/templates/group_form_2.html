@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% load crispy_forms_tags %} {% comment %} add crispy forms to installed apps in settings first then load here {% endcomment %}
+
+{% block title %}Add New Group{% endblock title %}
+
+
+{% block content %}
+<h5> Add New Group</h5>
+<p></p>
+<form  method="post">
+
+<!-- Security token -->
+
+{% csrf_token %}
+
+{% comment %} Using the formset {% endcomment %}
+
+{% comment %} {{form.as_p}} This uses djangos inbuilt form {% endcomment %} 
+{{form|crispy}}
+
+<input type="submit" value="Add Group">
+
+</form>
+
+<p></p>
+
+<a href="{% url 'groups' %}"><button>Cancel</button> </a>
+
+{% endblock %}
+
+
+
+

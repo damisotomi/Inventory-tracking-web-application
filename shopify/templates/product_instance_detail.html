@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block title %}{{productinstance}}{% endblock title %}
+
+{% block content %}
+    <h3> Product Name: {{productinstance}} </h3>
+    <h5> Product group: {{productinstance.product.group}}</h5>
+    <h5> Product Quantity: {{productinstance.quantity}}</h5>
+    <h5> Warehouse : {{productinstance.warehouse}}, {{productinstance.warehouse.location}}</h6>
+    <hr>
+    <a href="{% url 'product_instance_update_form' productinstance.id %}"><button>Edit transaction</button> </a> &nbsp <a href="{% url 'product_instance_delete_form' productinstance.id %}"><button> Delete transaction</button> </a> 
+    <p></p>   
+    <hr>
+    <p></P>
+    <a href="{% url 'product_instances'%}"><button>Go back to transaction list</button> </a>        
+
+{% endblock content %}
+
+
