@@ -3,7 +3,7 @@
 
 
 
-<strong> How it works </strong>
+<strong><b> How it works </b> </strong>
 <p> An Inventory management app that allows a company manage its inventory.</p>
 
 1. You can add, edit and delete products (can only delete products that have no transactions recorded for them.).
