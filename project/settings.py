@@ -25,7 +25,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-p(!yyis_tx0e6__8on-%=0ojrk5@evvmqz6+b(jyaf@swje+a)'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['dami-sotomi-shopify-backend-challenge.azurewebsites.net','127.0.0.1']
 
