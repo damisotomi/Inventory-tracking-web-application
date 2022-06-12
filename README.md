@@ -13,3 +13,5 @@ How to run on your local device.
 7. Navigate as you like
 
 Live website can be viewd at http://dami-sotomi-shopify-backend-challenge.azurewebsites.net/
+
+For best experience, view on a laptop 😁😁
