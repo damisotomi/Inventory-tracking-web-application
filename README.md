@@ -3,7 +3,7 @@
 
 
 
-**How it works**
+<strong> How it works </strong>
 <p> An Inventory management app that allows a company manage its inventory.</p>
 
 1. You can add, edit and delete products (can only delete products that have no transactions recorded for them.).
@@ -17,7 +17,7 @@
 
 
 
-**How to run on your local device.**
+<strong>**How to run on your local device.**</strong>
 1. Fork the repository
 2. Make a clone to your local device
 3. Navigate to the virtual environment 'venv --> Scripts --> Activate.ps1' to activate the virtual environment.
