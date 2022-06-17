@@ -1,4 +1,4 @@
-# Shopify-backend-developer-intern-challenge
+# Inverntory tracking web application
  An inventory management web app created for the Fall 2022 Shopify Backend Developer Intern Challenge
 
 
