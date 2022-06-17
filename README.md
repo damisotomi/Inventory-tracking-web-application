@@ -31,4 +31,4 @@
 
 Live website can be viewed at http://dami-sotomi-shopify-backend-challenge.azurewebsites.net/
 
-For best experience, view on a laptop 😁😁
+For best experience, view on a laptop.  😁😁😁
