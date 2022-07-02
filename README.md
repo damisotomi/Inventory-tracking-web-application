@@ -1,4 +1,4 @@
-# Inverntory tracking web application
+# Inventory tracking web application
  An inventory management web app created for the Fall 2022 Shopify Backend Developer Intern Challenge
 
 
