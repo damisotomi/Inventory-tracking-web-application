@@ -29,6 +29,6 @@
 7. Read the manual on the site to get started 
 8. Navigate and perform actions as you like.
 
-Live website can be viewed at http://dami-sotomi-shopify-backend-challenge.azurewebsites.net/
+Live website can be viewed at https://sotomi-inventory-tracking-app.herokuapp.com/
 
 For best experience, view on a laptop.  😁😁😁
