@@ -11,7 +11,9 @@ from shopify.models import Group, ProductInstance, Warehouse, Product
 
 
 def index(request):
-    return render(request,'index.html')
+    num_of_visits=request.session.get('num_of_visits',0)
+    request.session['num_of_visits']=num_of_visits+1
+    return render(request,'index.html',{'num_of_visits':num_of_visits})
 
 class WarehouseListView(generic.ListView):
     model=Warehouse
