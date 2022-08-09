@@ -61,7 +61,7 @@ class Product(models.Model):
 
     def totalquantity(self):
         total=0
-        for instance in self.product.all():
+        for instance in self.product.all(): #note product is the related name here
             total+=instance.quantity
         return total
 
